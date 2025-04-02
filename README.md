@@ -1,4 +1,4 @@
-# SkillSwap
+# SkillShare
 
 SkillSwap is a MERN stack web platform designed to facilitate collaborative learning and skill development through peer-to-peer guidance. The platform emphasizes reciprocal knowledge exchange, industrial-grade security features, and user-friendly interfaces to create a dynamic learning environment.
 
