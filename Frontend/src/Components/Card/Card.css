@@ -1,0 +1,193 @@
+:root {
+  --gradient-primary: linear-gradient(135deg, #BB86FC, #9C27B0);
+  --gradient-secondary: linear-gradient(135deg, #03DAC6, #018786);
+  --gradient-accent: linear-gradient(135deg, #BB86FC, #03DAC6);
+  --gradient-rainbow: linear-gradient(90deg, #FF4D4D, #FFA64D, #FFFF4D, #4DFF4D, #4DFFFF, #4D4DFF, #FF4DFF);
+}
+
+.skill-card {
+  background-color: var(--bg-elevated);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-accent);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+.card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.skill-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: var(--accent-primary);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  font-family: 'Nunito', sans-serif;
+}
+
+.card-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 8px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card-rating i {
+  color: #FFC107;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+  line-height: 1.4;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+  justify-content: center;
+}
+
+.author-name {
+  font-size: 0.9rem;
+  color: #B0B0B0;
+  font-weight: 500;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card-description {
+  color: #B0B0B0;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.card-button {
+  background-color: #9C27B0;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.card-button:hover {
+  background-color: #7B1FA2;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+}
+
+.card-button:hover::before {
+  left: 100%;
+}
+
+.card-button i {
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .card-image-container {
+    height: 180px;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

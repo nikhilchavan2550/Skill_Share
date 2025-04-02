@@ -1,0 +1,310 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey-darker);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(1, 62, 56, 0.3) 0%, rgba(45, 45, 45, 0.95) 70%);
+  z-index: 1;
+}
+
+/* Add skill swap themed background elements */
+.login-background::before,
+.login-background::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--cyan) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.login-background::before {
+  top: -100px;
+  right: -100px;
+  animation: skill-pulse 15s ease-in-out infinite;
+}
+
+.login-background::after {
+  bottom: -100px;
+  left: -100px;
+  animation: skill-pulse 15s ease-in-out infinite reverse;
+}
+
+@keyframes skill-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.15;
+  }
+}
+
+.login-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xl);
+  width: 100%;
+  padding: var(--space-lg);
+}
+
+.login-box {
+  background-color: rgba(45, 45, 45, 0.8);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--red);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-2xl);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.login-title {
+  font-family: var(--heading-font);
+  color: var(--red);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xl);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.login-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--red), transparent);
+}
+
+.login-subtitle {
+  color: var(--cyan);
+  margin-bottom: var(--space-lg);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: var(--space-md) 0;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--cyan);
+}
+
+.login-divider::before {
+  margin-right: var(--space-sm);
+}
+
+.login-divider::after {
+  margin-left: var(--space-sm);
+}
+
+.btn-google {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--body-font);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(245, 102, 100, 0.3);
+  position: relative;
+}
+
+.btn-google:hover {
+  background-color: var(--red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(245, 102, 100, 0.4);
+}
+
+.btn-google:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(245, 102, 100, 0.3);
+}
+
+.btn-google svg {
+  font-size: 1.2rem;
+}
+
+.login-image {
+  position: absolute;
+  width: 350px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.login-image-top {
+  top: 50px;
+  left: 5%;
+  animation: skillsFloat 15s ease-in-out infinite;
+}
+
+.login-image-bottom {
+  bottom: 50px;
+  right: 5%;
+  animation: skillsFloat 15s ease-in-out infinite reverse;
+}
+
+.login-register-link {
+  margin-top: var(--space-lg);
+  color: var(--cyan);
+  font-size: 0.9rem;
+}
+
+.login-register-link a {
+  color: var(--yellow);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-register-link a:hover {
+  color: var(--yellow-light);
+  text-decoration: underline;
+}
+
+.btn-register {
+  background-color: transparent;
+  color: var(--cyan);
+  border: 2px solid var(--cyan);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--body-font);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-register:hover {
+  background-color: var(--cyan);
+  color: var(--grey-darker);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(59, 180, 161, 0.3);
+}
+
+.btn-register:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(59, 180, 161, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Updated animations */
+@keyframes skillsFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) scale(1.02);
+  }
+  50% {
+    transform: translateY(0) scale(1.05);
+  }
+  75% {
+    transform: translateY(15px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-title {
+    font-size: 2.5rem;
+  }
+  
+  .login-box {
+    padding: var(--space-lg) var(--space-xl);
+  }
+  
+  .login-image {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 2rem;
+  }
+  
+  .login-box {
+    padding: var(--space-md) var(--space-lg);
+  }
+  
+  .login-image {
+    width: 180px;
+    opacity: 0.4;
+  }
+}

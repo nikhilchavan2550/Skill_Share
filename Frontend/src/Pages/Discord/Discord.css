@@ -1,0 +1,257 @@
+.discord-page {
+  min-height: calc(100vh - 76px);
+  padding-top: 76px;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.discord-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.discord-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(187, 134, 252, 0.15) 0%, rgba(18, 18, 18, 0) 70%);
+  z-index: 0;
+}
+
+.discord-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.discord-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #BB86FC, #03DAC6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-subtitle {
+  font-size: 1.2rem;
+  color: #B0B0B0;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: #7289DA;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(114, 137, 218, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.discord-button:active {
+  transform: translateY(-1px);
+}
+
+.discord-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.discord-feature {
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.discord-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #BB86FC, #03DAC6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.feature-description {
+  color: #B0B0B0;
+  line-height: 1.6;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-community {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.community-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.community-description {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #B0B0B0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #BB86FC;
+  margin-bottom: 5px;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.stat-label {
+  color: #B0B0B0;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.discord-cta {
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.cta-description {
+  color: #B0B0B0;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.login-message {
+  background-color: rgba(207, 102, 121, 0.1);
+  color: #CF6679;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-link {
+  color: #BB86FC;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #03DAC6;
+}
+
+@media (max-width: 768px) {
+  .discord-title {
+    font-size: 2.5rem;
+  }
+  
+  .discord-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .discord-hero {
+    margin-bottom: 40px;
+  }
+  
+  .discord-features {
+    gap: 20px;
+  }
+  
+  .discord-cta {
+    padding: 30px 20px;
+  }
+  
+  .cta-title {
+    font-size: 1.8rem;
+  }
+} 

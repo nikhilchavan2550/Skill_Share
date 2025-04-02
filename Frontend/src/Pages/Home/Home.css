@@ -1,0 +1,586 @@
+.home-page {
+  background-color: #121212;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Remove any extra top space */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Common section styles */
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
+}
+
+.section-title .accent-text,
+.section-title span.accent-text {
+  background: linear-gradient(45deg, #BB86FC, #03DAC6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #B0B0B0;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+}
+
+.accent-text {
+  background: linear-gradient(45deg, #BB86FC, #03DAC6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+
+/* Featured Skills Section */
+.featured-skills-section {
+  background-color: #121212;
+  position: relative;
+}
+
+.featured-skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(3, 218, 198, 0.03) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.card-grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Top Mentors Section */
+.top-mentors-section {
+  background-color: #1E1E1E;
+  position: relative;
+}
+
+.top-mentors-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, transparent 60%, var(--bg-primary) 100%);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.mentor-grid {
+  margin-top: 30px;
+}
+
+.mentor-card {
+  background: var(--bg-elevated);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.mentor-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-accent);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mentor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.mentor-card:hover::after {
+  opacity: 1;
+}
+
+.mentor-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mentor-card:hover .mentor-image {
+  transform: scale(1.05);
+}
+
+.mentor-avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.mentor-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: 
+    linear-gradient(#2D2D2D, #2D2D2D), 
+    linear-gradient(45deg, #BB86FC, #03DAC6);
+}
+
+.mentor-rating {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(45deg, #BB86FC, #03DAC6);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mentor-name {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mentor-expertise {
+  color: #BB86FC;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.mentor-stats {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mentor-stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #B0B0B0;
+  font-size: 0.9rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #121212;
+  position: relative;
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: var(--gradient-accent);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card:hover::after {
+  opacity: 1;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  opacity: 0.1;
+  color: #BB86FC;
+}
+
+.testimonial-text {
+  margin-bottom: 20px;
+  color: #E0E0E0;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-top: 30px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.testimonial-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #BB86FC;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Join Section */
+.join-section {
+  background-color: #1E1E1E;
+  padding: 100px 0;
+}
+
+.join-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 60px;
+  background-color: #2D2D2D;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.join-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.join-content h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.join-content p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  color: #B0B0B0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.join-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.join-visual {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.join-shape-1,
+.join-shape-2,
+.join-shape-3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.join-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(187, 134, 252, 0.15);
+  top: -100px;
+  right: -50px;
+}
+
+.join-shape-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(3, 218, 198, 0.1);
+  bottom: -100px;
+  right: 100px;
+}
+
+.join-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(187, 134, 252, 0.1);
+  bottom: 50px;
+  left: -50px;
+}
+
+.purple-btn {
+  background: linear-gradient(45deg, #BB86FC, #9C27B0);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.purple-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(187, 134, 252, 0.3);
+}
+
+.discord-btn {
+  background-color: transparent;
+  border: 2px solid #7289DA;
+  color: #7289DA;
+  transition: all 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: #7289DA;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(114, 137, 218, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .join-container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  .join-content {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .join-actions {
+    justify-content: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .join-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+}
+
+/* Add this to CSS variables if not already present */
+:root {
+  --gradient-primary: linear-gradient(135deg, #BB86FC, #9C27B0);
+  --gradient-secondary: linear-gradient(135deg, #03DAC6, #018786);
+  --gradient-accent: linear-gradient(135deg, #BB86FC, #03DAC6);
+  --gradient-rainbow: linear-gradient(90deg, #FF4D4D, #FFA64D, #FFFF4D, #4DFF4D, #4DFFFF, #4D4DFF, #FF4DFF);
+}
+
+/* Course Card Styling */
+.course-card {
+  background-color: var(--bg-elevated);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.course-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-accent);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.course-card:hover::after {
+  opacity: 1;
+}
+
+.course-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.course-card:hover img {
+  transform: scale(1.05);
+}
+
+.btn-view-more,
+.btn-browse-all {
+  background-color: var(--purple-primary);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-view-more::before,
+.btn-browse-all::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn-view-more:hover,
+.btn-browse-all:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+.btn-view-more:hover::before,
+.btn-browse-all:hover::before {
+  left: 100%;
+}

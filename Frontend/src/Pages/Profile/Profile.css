@@ -1,0 +1,253 @@
+/* ProfilePage.css */
+
+.left-div {
+  display: flex;
+}
+
+.profile-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.profile-container {
+  font-family: "Nunito", sans-serif;
+  color: white;
+  padding: 20px;
+  background-color: #121212; /* Darker background to match theme */
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #263238; /* Dark border */
+  box-shadow: 0 0 15px rgba(38, 50, 56, 0.5); /* Subtle shadow */
+}
+
+.profile-name {
+  font-size: 2rem !important;
+  margin-top: 10px;
+  color: white; /* Ensure white text for visibility */
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.rating-stars {
+  font-size: 24px;
+  color: #FF5722; /* Orange accent for stars */
+}
+
+.rating-value {
+  margin-left: 5px;
+  color: #B0BEC5; /* Light gray text */
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.connect-button {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF5722; /* Orange accent */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.connect-button:hover {
+  background-color: #F4511E; /* Darker orange on hover */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.report-button {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #CF6679; /* Error color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.report-button:hover {
+  background-color: #B00020; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edit-links {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF5722; /* Orange accent */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.edit-button:hover {
+  background-color: #F4511E; /* Darker orange on hover */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #FF5722 !important; /* Orange accent for headers */
+  margin-top: 20px;
+}
+
+.bio {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: #B0BEC5; /* Light gray text */
+  line-height: 1.6;
+}
+
+.portfolio-links {
+  margin-top: 1rem;
+  display: flex;
+  margin-bottom: 3rem;
+  min-width: 15rem;
+  justify-content: space-between;
+}
+
+.link {
+  width: 50px;
+  filter: brightness(0.9); /* Slightly dimmed */
+}
+
+.portfolio-link {
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.portfolio-link:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.skill-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.skill-box {
+  background-color: #263238; /* Dark slate background */
+  color: #B0BEC5; /* Light gray text */
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-box:hover {
+  background-color: #37474F; /* Lighter on hover */
+  transform: translateY(-2px);
+}
+
+.education-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.project-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.refresh-button {
+  padding: 10px 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF5722; /* Orange accent */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.refresh-button:hover {
+  background-color: #F4511E; /* Slightly darker orange on hover */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .left-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edit-button, 
+  .refresh-button {
+    display: flex;
+    align-self: center;
+    margin-right: 0px !important;
+    justify-content: center;
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .profile-box,
+  .profile-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .connect-button,
+  .rating,
+  .profile-name {
+    margin-left: 0px !important;
+  }
+  .report-button,
+  .connect-button {
+    padding: 5px 10px;
+  }
+
+  .misc {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

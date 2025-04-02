@@ -1,0 +1,344 @@
+/* About Us Page Styles */
+:root {
+  --accent-primary: #BB86FC;
+  --accent-secondary: #03DAC6;
+  --purple-primary: #9C27B0;
+  --purple-hover: #7B1FA2;
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --bg-elevated: #2d2d2d;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --error: #CF6679;
+  --warning: #FFB74D;
+  --success: #4CAF50;
+  --info: #64B5F6;
+  --basefont: "Nunito", sans-serif;
+  --secfont: "Nunito", sans-serif;
+  
+  /* Spacing Variables */
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+  
+  /* Font Sizes */
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.5rem;
+  --fs-4xl: 3rem;
+  --fs-5xl: 3.5rem;
+  
+  /* Border Radius */
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-container {
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+/* Header Section */
+.about-us-header {
+  background-color: #1E1E1E;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-us-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80") center/cover;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-us-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #BB86FC;
+  font-family: 'Nunito', sans-serif;
+}
+
+.about-us-header p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #B0B0B0;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Container for Sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Mission Section */
+.about-us-mission {
+  padding: 5rem 0;
+  background-color: #121212;
+}
+
+.mission-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.mission-text, .mission-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mission-text h2 {
+  font-size: 2rem;
+  color: #BB86FC;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.mission-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #B0B0B0;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+}
+
+.mission-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rounded-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Core Values Section */
+.core-values {
+  padding: 5rem 0;
+  background-color: #1E1E1E;
+}
+
+.core-values h2 {
+  font-size: 2rem;
+  color: #BB86FC;
+  margin-bottom: 3rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background-color: #2d2d2d;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(187, 134, 252, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.value-icon svg {
+  font-size: 2rem;
+  color: #BB86FC;
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #B0B0B0;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Story Section */
+.about-us-story {
+  padding: 5rem 0;
+  background-color: #121212;
+}
+
+.story-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap-reverse;
+}
+
+.story-text, .story-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  color: #BB86FC;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #B0B0B0;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+}
+
+.story-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Join Us Section */
+.join-us {
+  padding: 5rem 0;
+  background-color: #1E1E1E;
+  text-align: center;
+}
+
+.join-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.join-content h2 {
+  font-size: 2.2rem;
+  color: #BB86FC;
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.join-content p {
+  font-size: 1.1rem;
+  color: #B0B0B0;
+  margin-bottom: 2rem;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background-color: #9C27B0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(156, 39, 176, 0.3);
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #7B1FA2;
+  box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-us-header {
+    padding: 3rem 0;
+  }
+  
+  .about-us-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-us-mission, .about-us-story, .core-values, .join-us {
+    padding: 3rem 0;
+  }
+  
+  .mission-content, .story-content {
+    gap: 2rem;
+  }
+  
+  .mission-text, .story-text {
+    order: 1;
+  }
+  
+  .mission-image, .story-image {
+    order: 2;
+  }
+  
+  .values-grid {
+    gap: 1.5rem;
+  }
+}

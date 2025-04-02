@@ -1,0 +1,664 @@
+/* Edit Profile Page Styles */
+:root {
+  --gradient-primary: linear-gradient(135deg, #2C3E50, #1A2530); /* Dark blue gray */
+  --gradient-secondary: linear-gradient(135deg, #03DAC6, #018786);
+  --gradient-accent: linear-gradient(45deg, #FF5722, #F4511E); /* Orange accent */
+  --gradient-purple-dark: linear-gradient(135deg, #263238, #1E272C); /* Dark slate */
+  --gradient-teal: linear-gradient(135deg, #03DAC6, #00897B);
+  --gradient-lavender: linear-gradient(135deg, #455A64, #37474F); /* Dark blue gray */
+  --accent-purple-light: #90A4AE;
+  --accent-purple-medium: #607D8B;
+  --accent-teal-light: #B2DFDB;
+  --accent-teal-medium: #4DB6AC;
+}
+
+.edit-profile-container {
+  min-height: calc(100vh - 70px);
+  background-color: var(--bg-primary);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+.edit-profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.edit-profile-sidebar {
+  flex: 0 0 280px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  z-index: 1;
+}
+
+.edit-profile-sidebar::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-purple-dark);
+  z-index: -1;
+  border-radius: calc(var(--radius-lg) + 2px);
+  opacity: 0.7;
+}
+
+.edit-profile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edit-profile-nav-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-profile-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--gradient-accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.edit-profile-nav-item:hover {
+  background-color: rgba(38, 50, 56, 0.5);
+}
+
+.edit-profile-nav-item:hover::before,
+.edit-profile-nav-item.active::before {
+  transform: scaleY(1);
+}
+
+.edit-profile-nav-item.active {
+  background-color: rgba(38, 50, 56, 0.7);
+  color: #FF5722;
+  font-weight: 500;
+}
+
+.edit-profile-nav-icon {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.edit-profile-main {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-profile-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-teal);
+}
+
+/* Profile tab styling */
+.edit-profile-main[data-tab="profile"]::before {
+  background: var(--gradient-accent);
+}
+
+/* Education tab styling */
+.edit-profile-main[data-tab="education"]::before {
+  background: var(--gradient-accent);
+}
+
+/* Projects tab styling */
+.edit-profile-main[data-tab="projects"]::before {
+  background: var(--gradient-accent);
+}
+
+/* Settings tab styling */
+.edit-profile-main[data-tab="settings"]::before {
+  background: var(--gradient-accent);
+}
+
+.edit-profile-header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.edit-profile-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.edit-profile-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: 'Nunito', sans-serif;
+}
+
+.form-control {
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 15px !important;
+  width: 100%;
+  transition: all 0.3s ease !important;
+  font-family: 'Nunito', sans-serif;
+}
+
+.form-control:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.form-text {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: var(--text-secondary);
+}
+
+.profile-image-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+    var(--gradient-primary) border-box;
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.4);
+}
+
+.profile-image-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #263238; /* Dark theme button */
+  color: white;
+}
+
+.btn::before {
+  content: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #37474F;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+}
+
+.btn-outline:hover {
+  background-color: rgba(187, 134, 252, 0.1);
+  color: #BB86FC;
+}
+
+.btn-danger {
+  background-color: #CF6679;
+  border-color: #CF6679;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #B00020;
+  border-color: #B00020;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.skill-tag {
+  background: rgba(38, 50, 56, 0.5);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(96, 125, 139, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-tag:hover::before {
+  opacity: 0.1;
+}
+
+.skill-tag-remove {
+  background: none;
+  border: none;
+  color: #B0BEC5;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.skill-tag-remove:hover {
+  color: #FF5722;
+  transform: scale(1.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+/* Different styles for buttons */
+.btn-profile-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(26, 37, 48, 0.3);
+}
+
+.btn-profile-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(26, 37, 48, 0.4);
+}
+
+.btn-profile-secondary {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(244, 81, 30, 0.3);
+}
+
+.btn-profile-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(244, 81, 30, 0.4);
+}
+
+.btn-profile-outline {
+  background-color: #FF5722 !important; /* Orange background for better visibility */
+  border: 2px solid #FF7043;
+  color: white !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-profile-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+
+.btn-profile-outline:hover {
+  color: white !important;
+  background-color: #F4511E !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(244, 81, 30, 0.4) !important;
+}
+
+/* Make sure all dark buttons have adequate contrast */
+.btn-dark, 
+.btn-secondary,
+button[class*="outline"],
+.btn-profile-outline {
+  color: white !important;
+  background-color: #FF5722 !important;
+  border-color: #FF7043 !important;
+}
+
+.btn-dark:hover, 
+.btn-secondary:hover,
+button[class*="outline"]:hover {
+  background-color: #F4511E !important;
+  color: white !important;
+  border-color: #FF7043 !important;
+}
+
+/* Ensure all profile buttons are visible */
+.profile-image-actions .btn {
+  background-color: #FF5722 !important;
+  color: white !important;
+  border-color: #FF7043 !important;
+}
+
+.btn-profile-teal {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(244, 81, 30, 0.3);
+}
+
+.btn-profile-teal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(244, 81, 30, 0.4);
+  background: linear-gradient(135deg, #FF5722, #F4511E);
+  color: white;
+}
+
+.btn-profile-accent {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(3, 218, 198, 0.3);
+}
+
+.btn-profile-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(3, 218, 198, 0.4);
+  background: linear-gradient(45deg, #9C27B0, #00BFA5);
+  color: white;
+}
+
+/* Update password button for settings tab */
+.settings-section .btn-profile-primary {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(244, 81, 30, 0.3);
+}
+
+/* Update the form background colors */
+.education-entry,
+.project-entry {
+  background-color: rgba(38, 50, 56, 0.3) !important;
+  border: 1px solid rgba(96, 125, 139, 0.3) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 250px; /* Increased min-height to accommodate buttons */
+  box-sizing: border-box !important;
+  margin: 0 0 30px 0 !important; /* Increased bottom margin for more space */
+  padding: 20px 20px 30px 20px !important; /* Added more padding at the bottom */
+  display: block !important; /* Force block display */
+  flex: none !important; /* Override any flex settings */
+  float: none !important; /* Prevent floating */
+  position: relative !important; /* Control positioning */
+  overflow: visible !important; /* Allow overflow if needed */
+  border-radius: 10px !important; /* Consistent rounded corners */
+}
+
+.project-entry .form-group,
+.education-entry .form-group {
+  margin-bottom: 15px !important;
+  width: 100% !important;
+  padding: 0 8px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Force consistent button styling */
+.project-entry button,
+.education-entry button {
+  background-color: #FF5722 !important; 
+  color: white !important;
+  border-color: #FF7043 !important;
+  margin: 5px 0 !important;
+  align-self: flex-start !important;
+}
+
+/* Add specific styles for buttons container in project entries */
+.project-entry .form-actions,
+.project-entry .button-container,
+.project-entry .row:last-child {
+  margin-top: 20px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  width: 100% !important;
+  padding-bottom: 10px !important;
+}
+
+/* Ensure buttons have proper spacing and don't get cut off */
+.project-entry .btn,
+.project-entry button {
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+  white-space: nowrap !important;
+  height: auto !important;
+  min-height: 38px !important;
+}
+
+.education-entry:hover, 
+.project-entry:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Super specific selectors to override any bootstrap or inline styles */
+.edit-profile-main[data-tab="projects"] .project-entry,
+.edit-profile-main[data-tab="projects"] div.project-entry,
+div.edit-profile-main[data-tab="projects"] div.project-entry {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  margin: 0 0 30px 0 !important; /* Increased bottom margin */
+  padding: 20px 20px 40px 20px !important; /* Increased bottom padding significantly */
+  box-sizing: border-box !important;
+  display: block !important;
+  position: relative !important;
+  min-height: 280px !important; /* Explicitly set higher min-height */
+}
+
+/* Fix form layout inside cards - even more specific */
+.project-entry .row,
+.project-entry > .row,
+div.project-entry > div.row,
+.education-entry .row,
+.education-entry > .row,
+div.education-entry > div.row {
+  width: 100% !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  box-sizing: border-box !important;
+}
+
+/* Column fixes */
+.project-entry .row .col-md-6,
+.education-entry .row .col-md-6 {
+  box-sizing: border-box !important;
+  padding: 0 8px !important;
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+}
+
+/* Fix date inputs to show consistently */
+.project-entry input[type="date"],
+.education-entry input[type="date"] {
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  padding: 10px 15px !important; 
+}
+
+/* Force form controls inside entries to be consistent */
+.project-entry .form-control,
+.education-entry .form-control {
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 12px 15px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Force labels inside entries to be consistent */
+.project-entry .form-label,
+.education-entry .form-label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+}
+
+/* Extra fixes for any potential conflict */
+.edit-profile-main[data-tab="projects"] .project-entry *,
+.edit-profile-main[data-tab="education"] .education-entry * {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .edit-profile-content {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  
+  .edit-profile-sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .edit-profile-main {
+    padding: 20px;
+  }
+  
+  .profile-image-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  /* Ensure project entries have enough space on mobile */
+  .project-entry,
+  .education-entry {
+    min-height: 320px !important;
+    padding: 20px 15px 50px 15px !important;
+    margin-bottom: 40px !important;
+  }
+  
+  /* Stack form groups in mobile view */
+  .project-entry .row .col-md-6,
+  .education-entry .row .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}

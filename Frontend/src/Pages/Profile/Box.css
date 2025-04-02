@@ -1,0 +1,58 @@
+.box {
+  background-color: #263238; /* Dark slate background */
+  color: white;
+  padding: 15px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border: 1px solid rgba(96, 125, 139, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.desc {
+  margin: 0.6rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #B0BEC5; /* Light gray text */
+  line-height: 1.6;
+}
+
+.details {
+  margin: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 1rem !important;
+  color: #78909C; /* Medium gray text */
+}
+
+.boxskill-boxes {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-box {
+  text-align: center;
+  background-color: rgba(244, 81, 30, 0.2); /* Orange accent background */
+  color: #FF5722; /* Orange accent text */
+  padding: 5px 10px;
+  margin-right: 0; /* Remove margin-right, we're using gap instead */
+  border-radius: 5px;
+  min-width: 4rem;
+  font-size: 12px;
+  border: 1px solid rgba(244, 81, 30, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-box:hover {
+  background-color: rgba(244, 81, 30, 0.3);
+  transform: translateY(-2px);
+}

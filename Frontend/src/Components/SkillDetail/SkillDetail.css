@@ -1,0 +1,259 @@
+.skill-detail-modal .modal-content {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.skill-detail-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+}
+
+.skill-detail-modal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem;
+}
+
+.skill-detail-modal .modal-title {
+  font-family: var(--basefont);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-detail-modal .close {
+  color: var(--text-secondary);
+}
+
+.skill-detail-content {
+  padding: 1rem 0;
+}
+
+.skill-detail-image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.skill-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.category-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.category-badge.programming {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.category-badge.design {
+  background-color: #FF6B6B;
+  color: var(--bg-primary);
+}
+
+.category-badge.marketing {
+  background-color: #03DAC6;
+  color: var(--bg-primary);
+}
+
+.instructor-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.instructor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+  border: 2px solid var(--accent-primary);
+}
+
+.instructor-info h5 {
+  font-family: var(--basefont);
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  color: #BBBBBB;
+  margin-right: 2px;
+}
+
+.star-icon.filled {
+  color: #FFD700;
+}
+
+.rating-value {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--bg-elevated);
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-primary);
+}
+
+.stat-item span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.skill-description h5,
+.skill-topics h5,
+.skill-curriculum h5 {
+  font-family: var(--basefont);
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.skill-description p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.skill-topics ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skill-topics li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.skill-curriculum {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+.curriculum-section {
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-elevated);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.section-header h6 {
+  margin: 0;
+  font-family: var(--basefont);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-header span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.section-content {
+  padding: 1rem;
+}
+
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lecture-item:last-child {
+  border-bottom: none;
+}
+
+.lecture-title {
+  color: var(--text-secondary);
+}
+
+.lecture-duration {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.modal-footer .btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: rgba(187, 134, 252, 0.1);
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: rgba(187, 134, 252, 0.8);
+}
+
+@media (max-width: 767px) {
+  .skill-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .stat-icon {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
